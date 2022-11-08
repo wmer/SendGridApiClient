@@ -33,14 +33,18 @@ namespace SendGridApiClient {
 
         public async Task<Response> SendSingleEmail(Email email, Dictionary<string, string> customArgs = null, params string[] files) {
             var msg = email.ToSendGridMessageToSingleRecipient();
-            if (files != null) { 
+            if (files != null) {
+                var i = 1;
                 foreach (var file in files) {
                     if (!string.IsNullOrEmpty(file)) {
                         var fileInfo = new FileInfo(file);
                         using (var fileStream = File.OpenRead(file)) {
                             await msg.AddAttachmentAsync(fileInfo.Name, fileStream);
+                            msg.AddCustomArg($"Anexo {1}", fileInfo.Name);
                         }
                     }
+
+                    i++;
                 }
 
             }
@@ -92,9 +96,9 @@ namespace SendGridApiClient {
                 endpoint = $"/{byType.Value}{endpoint}";
             }
 
-            var (result, statusCode, message) = await _consumingApiHelper
+            var (result, statusCode, message, header) = await _consumingApiHelper
                                                             .AddBearerAuthentication(_apiKey)
-                                                            .GetAssync<List<Stats>>(endpoint);
+                                                            .GetAsync<List<Stats>>(endpoint);
             return result;
         }
 
@@ -104,14 +108,14 @@ namespace SendGridApiClient {
                 endpoint = $"/messages?query={query.Value}&limit={limit}";
             }
 
-            var (result, statusCode, message) = await _consumingApiHelper
+            var (result, statusCode, message, header) = await _consumingApiHelper
                                                             .AddBearerAuthentication(_apiKey)
-                                                            .GetAssync<EmailActivity>(endpoint);
+                                                            .GetAsync<EmailActivity>(endpoint);
             return result;
         }
 
         public async Task<Result> ValidateEmail(EmailValidation emailValidation) {
-            var (result, statusCode, message) = await _consumingApiHelper
+            var (result, statusCode, message, header) = await _consumingApiHelper
                                                             .AddBearerAuthentication(_apiKeyValidation)
                                                             .PostAsync<EmailValidation, EmailInfo>("/validations/email", emailValidation);
             return result.result;
