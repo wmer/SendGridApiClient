@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGridApiClient", "SendGridApiClient\SendGridApiClient.csproj", "{120D6169-8122-4BC8-9B33-A56682D235E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendGridApiClient", "SendGridApiClient\SendGridApiClient.csproj", "{120D6169-8122-4BC8-9B33-A56682D235E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyHelpers", "..\ManyHelpers\ManyHelpers\ManyHelpers.csproj", "{69B7E790-8CEA-46E6-8473-1BEE5F33375E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{63DA308D-869B-4836-A5A6-A7B8BCC5D90A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpersLibs.Web", "..\..\Tools\HelpersLibs\HelpersLibs.Web\HelpersLibs.Web.csproj", "{064AB281-EBF7-431F-B65D-4614DFEC0072}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +19,16 @@ Global
 		{120D6169-8122-4BC8-9B33-A56682D235E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{120D6169-8122-4BC8-9B33-A56682D235E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{120D6169-8122-4BC8-9B33-A56682D235E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69B7E790-8CEA-46E6-8473-1BEE5F33375E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69B7E790-8CEA-46E6-8473-1BEE5F33375E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69B7E790-8CEA-46E6-8473-1BEE5F33375E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69B7E790-8CEA-46E6-8473-1BEE5F33375E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{064AB281-EBF7-431F-B65D-4614DFEC0072} = {63DA308D-869B-4836-A5A6-A7B8BCC5D90A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FC71AC6-525B-4D6A-98EA-EEE8E8C3BBA4}

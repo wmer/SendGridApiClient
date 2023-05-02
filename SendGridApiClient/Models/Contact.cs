@@ -10,3 +10,4 @@ namespace SendGridApiClient.Models {
         public DateTime Date { get; set; }
     }
 }
+ 

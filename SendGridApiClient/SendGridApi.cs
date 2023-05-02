@@ -1,11 +1,14 @@
-﻿using ManyHelpers.API;
+﻿using HelpersLib.Strings;
+using HelpersLibs.Web;
 using SendGrid;
 using SendGridApiClient.Converters;
 using SendGridApiClient.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +17,7 @@ namespace SendGridApiClient {
         private string _apiKey;
         private string _apiKeyValidation;
         private SendGridClient _client;
-        private CosumingHelper _consumingApiHelper;
+        private HttpClientHelper _consumingApiHelper;
 
         public SendGridClient Cliente { get; private set; }
 
@@ -25,7 +28,7 @@ namespace SendGridApiClient {
             _apiKey = apiKey;
             _apiKeyValidation = apiValidationKey;
             _client = new SendGridClient(apiKey);
-            _consumingApiHelper = new CosumingHelper("https://api.sendgrid.com/v3")
+            _consumingApiHelper = new HttpClientHelper("https://api.sendgrid.com/v3")
                                             .AddcontentType();
 
             Cliente = _client;
@@ -43,6 +46,28 @@ namespace SendGridApiClient {
                             msg.AddCustomArg($"Anexo {1}", fileInfo.Name);
                         }
                     }
+
+                    i++;
+                }
+
+            }
+
+            if (customArgs != null && customArgs.Count() > 0) {
+                foreach (var arg in customArgs) {
+                    msg.AddCustomArg(arg.Key, arg.Value);
+                }
+            }
+            return await _client.SendEmailAsync(msg);
+        }
+
+        public async Task<Response> SendSingleEmail(Email email, Dictionary<string, string>? customArgs = null, List<byte[]>? files = null) {
+            var msg = email.ToSendGridMessageToSingleRecipient();
+            if (files != null) {
+                var i = 1;
+                foreach (var file in files) {
+                    var base64Content = StringHelper.Base64Encode(file);
+                    msg.AddAttachment($"Anexo {1}", base64Content);
+                    msg.AddCustomArg($"Anexo {1}", "Anexo via Byte Array");
 
                     i++;
                 }
