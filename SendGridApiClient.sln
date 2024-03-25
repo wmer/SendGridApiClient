@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{63DA308D-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpersLibs.Web", "..\..\Tools\HelpersLibs\HelpersLibs.Web\HelpersLibs.Web.csproj", "{064AB281-EBF7-431F-B65D-4614DFEC0072}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpersLib.Strings", "..\..\Tools\HelpersLibs\HelpersLib.Strings\HelpersLib.Strings.csproj", "{CCEC86F5-CD26-4F9F-9607-6AF0B0CFFA9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{064AB281-EBF7-431F-B65D-4614DFEC0072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEC86F5-CD26-4F9F-9607-6AF0B0CFFA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEC86F5-CD26-4F9F-9607-6AF0B0CFFA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEC86F5-CD26-4F9F-9607-6AF0B0CFFA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEC86F5-CD26-4F9F-9607-6AF0B0CFFA9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{064AB281-EBF7-431F-B65D-4614DFEC0072} = {63DA308D-869B-4836-A5A6-A7B8BCC5D90A}
+		{CCEC86F5-CD26-4F9F-9607-6AF0B0CFFA9F} = {63DA308D-869B-4836-A5A6-A7B8BCC5D90A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FC71AC6-525B-4D6A-98EA-EEE8E8C3BBA4}
