@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SendGridApiClient.Models {
-    public class EmailInfo {
-        public Result result { get; set; }
-    }
+namespace SendGridApiClient.Models; 
+public class EmailInfo {
+    public Result result { get; set; }
 }

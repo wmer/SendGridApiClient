@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SendGridApiClient.Models {
-    public class EmailActivity {
-        public List<Message> messages { get; set; }
-    }
+namespace SendGridApiClient.Models; 
+public class EmailActivity {
+    public List<Message> messages { get; set; }
 }

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SendGridApiClient.Models {
-    public class EmailValidation {
-        public string email { get; set; }
-        public string source { get; set; }
-    }
+namespace SendGridApiClient.Models; 
+public class EmailValidation {
+    public string email { get; set; }
+    public string source { get; set; }
 }

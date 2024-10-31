@@ -12,3 +12,4 @@ public class EmailExtraData {
     public Dictionary<string, string> Substitutions { get; set; }
     public Dictionary<string, string> CustomArgs { get; set; }
 }
+ 
