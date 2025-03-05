@@ -6,7 +6,9 @@ using System.Text;
 namespace SendGridApiClient.Models; 
 public class SendGridWebHookEvent {
     public string CampanhaId { get; set; }
+    public string CampanhaNome { get; set; }
     public string MensagemID { get; set; }
+    public string TipoDeEnvio { get; set; }
     [JsonProperty("email")]
     public string Email { get; set; }
     [JsonProperty("timestamp")]
